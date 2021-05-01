@@ -33,7 +33,17 @@ public class RoofStacksPage extends BasePage{
     public WebElement emailInputBox;
 
     @FindBy(xpath = "//*[@id='file']")
-    public WebElement selectFileButton;
+    public WebElement selectFileInputBox;
+
+    @FindBy(xpath = "//*[@id='btn_upload']")
+    public WebElement uploadBtn;
+
+    @FindBy(css = "#percent")
+    public WebElement percentage;
+
+
+
+
 
 
 

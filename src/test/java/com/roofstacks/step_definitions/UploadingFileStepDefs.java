@@ -2,6 +2,7 @@ package com.roofstacks.step_definitions;
 
 import com.roofstacks.pages.BasePage;
 import com.roofstacks.pages.RoofStacksPage;
+import com.roofstacks.utilities.BrowserUtils;
 import com.roofstacks.utilities.ConfigurationReader;
 import com.roofstacks.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -63,11 +64,11 @@ public class UploadingFileStepDefs {
     public void verify_that_we_are_on_Lead_Product_Tester_page() throws InterruptedException {
 
         String expectedResult = "Lead Product Tester";
-        Thread.sleep(5);
+
+        BrowserUtils.waitForVisibility(roofStacksPage.leadProductTesterText,10);
         String actualResult =roofStacksPage.leadProductTesterText.getText();
         System.out.println("actual = " + actualResult);
 
-        Thread.sleep(5);
 
         Assert.assertEquals(expectedResult,actualResult);
 
@@ -92,8 +93,23 @@ public class UploadingFileStepDefs {
     @Then("upload a sample page to share your file")
     public void upload_a_sample_page_to_share_your_file() {
 
+        String filePath = "C:\\Users\\HP\\Desktop\\ROOF STACKS\\src\\test\\resources\\sampleFile.txt";
+        roofStacksPage.selectFileInputBox.sendKeys(filePath);
+        roofStacksPage.uploadBtn.click();
+
+        /* Send CV/Make An Application'a basıldıktan sonra açılan "File Upload Form"da
+         e-mail girişi yapılıp features klasörümüzün altında oluşturduğumuz örnek dosya
+         (sampleFile.txt) seçilip "upload" tıklandığında başarılı bir şekilde dosya yüklemesi yapılamamaktadır.
+         Bu durum "Manual" olarak test edildiğinde de gözükmektedir.) Dolayısıyla burada bir "BUG" bulunduğundan
+         bu kısım "automate edilemez". STLC döngüsüne istinaden bir "Bug Ticket" açılır. İlgili developer'a assign
+         edilip gerekli fix yapıldıktan sonra tekrar test edilir.
+        */
 
 
+//        String percentage = roofStacksPage.percentage.getText();
+//        System.out.println("percentage = " + percentage);
+
+        //
 
     }
 
