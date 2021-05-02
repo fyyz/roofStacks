@@ -108,7 +108,7 @@ public class UploadingFileStepDefs {
          e-mail girişi yapılıp features klasörümüzün altında oluşturduğumuz örnek dosya
          (sampleFile.txt) seçilip "upload" tıklandığında başarılı bir şekilde dosya yüklemesi yapılamamaktadır.
          Bu durum "Manual" olarak test edildiğinde de gözükmektedir.) Dolayısıyla burada bir "BUG" bulunduğundan
-         bu kısım "automate edilemez". STLC döngüsüne istinaden bir "Bug Ticket" açılır. İlgili developer'a assign
+         STLC döngüsüne istinaden bir "Bug Ticket" açılır. İlgili developer'a assign
          edilip gerekli fix yapıldıktan sonra tekrar test edilir.
         */
 
