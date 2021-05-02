@@ -8,7 +8,10 @@ import java.sql.Driver;
 public abstract class  BasePage {
 
     public BasePage() {
+
         PageFactory.initElements(Driver.get(), this);
     }
 
 }
+
+

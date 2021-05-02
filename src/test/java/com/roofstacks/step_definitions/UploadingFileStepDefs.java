@@ -71,6 +71,7 @@ public class UploadingFileStepDefs {
 
 
         Assert.assertEquals(expectedResult,actualResult);
+        Thread.sleep(5);
 
     }
 
@@ -96,6 +97,10 @@ public class UploadingFileStepDefs {
         String filePath = "C:\\Users\\HP\\Desktop\\ROOF STACKS\\src\\test\\resources\\sampleFile.txt";
         roofStacksPage.selectFileInputBox.sendKeys(filePath);
         roofStacksPage.uploadBtn.click();
+        BrowserUtils.waitFor(5);
+        String percentage = Driver.get().findElement(By.id("percent")).getText();
+        System.out.println(" percentage= " +percentage );
+        Assert.assertEquals("100%", percentage);
 
         /* Send CV/Make An Application'a basıldıktan sonra açılan "File Upload Form"da
          e-mail girişi yapılıp features klasörümüzün altında oluşturduğumuz örnek dosya
