@@ -9,6 +9,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -100,6 +101,7 @@ public class UploadingFileStepDefs {
         BrowserUtils.waitFor(5);
         String percentage = Driver.get().findElement(By.id("percent")).getText();
         System.out.println(" percentage= " +percentage );
+
         Assert.assertEquals("100%", percentage);
 
         /* Send CV/Make An Application'a basıldıktan sonra açılan "File Upload Form"da
